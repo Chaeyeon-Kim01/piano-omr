@@ -1,0 +1,19 @@
+[project]
+name = "piano-omr"
+version = "0.1.0"
+description = "Reads sheet music out of a PDF with homr, over HTTP, for the Piano Fingering app."
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.11,<3.13"
+# homr pins the rest: pypdfium2 to render pages, Pillow to save them.
+dependencies = ["homr[cpu]==0.7.1"]
+
+[project.scripts]
+piano-omr = "piano_omr.server:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["piano_omr"]
